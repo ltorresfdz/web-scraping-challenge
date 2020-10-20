@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mision to Mars</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mision to Mars</h1>
+      
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    
+    <h2><strong>Latest Mars News</strong></h2>
+    <h4> {{ mars_info.news_title }}</h4>
+    <h5> {{ mars_info.news_text }}</h5>
+    <h2><strong>Featured Mars Image</strong></h2>  
+  <img src="{{ mars_info.img_link }}" alt="mars">
+   
+   <h2><strong>Current Weather on Mars</strong></h2> 
+   <h5> {{ mars_info.weather }}</h5>
+   <h2><strong>Mars Facts</strong></h2>
+       {{ mars_info.tabla | safe }}
+     
+   <h2><strong>Mars Hemispheres</strong></h2>  
+  
+  </div>
+
+<div class="container-fluid">  
+ <div class="row">
+         {% for foto in mars_info.hem %}
+         
+         <div class="col-sm-12 col-md-6">
+         <img class ="talla" src="{{foto.foto}}" alt="foto">
+         <div class="caption center-block"><strong>{{foto.titulo}}</strong></div> 
+         </div>
+        
+
+          {% endfor %}
+
+</div>
+</div>
+
+
+
+
+</body>
+
+</html>
+
