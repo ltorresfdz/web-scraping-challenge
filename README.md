@@ -1,2 +1,2 @@
 # web-scraping-challenge
-Homework Data Analytics Boot Camp Monterrey TECH
+Data Analytics Boot Camp Monterrey TECH
